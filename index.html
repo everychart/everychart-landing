@@ -690,7 +690,85 @@
                 flex-direction: column;
                 gap: 15px;
             }
+        /* Case Study Section */
+        .case-study {
+            padding: 80px 0;
+            background-color: #f5f7fa;
         }
+
+        .video-showcase {
+            margin-top: 40px;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        @media (min-width: 992px) {
+            .video-showcase {
+                grid-template-columns: 3fr 2fr;
+            }
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        @media (min-width: 992px) {
+            .video-container {
+                padding-bottom: 75%; /* Taller for desktop view */
+        }
+    }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            padding: 30px;
+        }
+
+    .video-description h3 {
+        color: var(--everychart-blue);
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 15px;
+}
+
+    .video-description p {
+        color: var(--secondary);
+        margin-bottom: 15px;
+        line-height: 1.6;
+}
+
+    .video-cta {
+        margin-top: 25px;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .btn-outline {
+        background-color: transparent;
+        color: var(--everychart-blue);
+        border: 2px solid var(--everychart-blue);
+}
+
+    .btn-outline:hover {
+        background-color: var(--everychart-light);
+    }
+}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -903,12 +981,35 @@
             </div>
         </div>
     </section>
-    
+    <section class="case-study" id="case-study">
+        <div class="container">
+            <div class="section-header">
+                <h2>Case Study: Lex Fridman Podcast Knowledge Graph</h2>
+                <p>See how our knowledge agent technology transforms podcast content into an interactive knowledge network</p>
+            </div>
+            
+            <div class="video-showcase">
+                <div class="video-container">
+                    <iframe width="100%" height="500" src="https://www.youtube.com/embed/JsQO7N6iNMw" title="Lex Fridman Podcast Knowledge Graph Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-description">
+                    <h3>Interactive Knowledge Navigation</h3>
+                    <p>This demonstration shows how our system extracts and connects key concepts across hundreds of podcast episodes, creating an intuitive navigation experience for complex information.</p>
+                    <p>Watch how users can explore related topics, discover connections between different conversations, and gain insights that would be difficult to find through traditional search methods.</p>
+                    <div class="video-cta">
+                        <a href="https://youtu.be/JsQO7N6iNMw" class="btn" target="_blank">Watch on YouTube</a>
+                        <a href="https://github.com/everychart/historical-chat" class="btn btn-outline" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="cta" id="contact">
         <div class="container">
             <h2>Start Your Enterprise AI Transformation Today</h2>
-            <p>Our team of experts will guide you through each step of implementing an intelligent agent network tailored to your organization's needs.</p>
-            <a href="#" class="btn btn-light">Request a Consultation</a>
+            <p>Whether you're looking for AI assessments or ready to build your knowledge network, our agents can be deployed for any phase.</p>
+            <a href="https://calendly.com/heidi-everychart/30min" class="btn btn-light" target="_blank">Request a Demo</a>
+                <p class="cta-alternative">Or <a href="mailto:heidi@everychart.io">email us</a> with any questions</p>
         </div>
     </section>
     
